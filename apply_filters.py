@@ -12,10 +12,6 @@ def apply_tracking_filter(filt, sensor_match_locs, sensor_uncertainties, latency
     for step_idx in range(len(sensor_match_locs) - latency):
         sensor_reading = sensor_match_locs[step_idx]
         sensor_uncertainty = sensor_uncertainties[step_idx]
-        #print(sensor_uncertainty)
-        
-        #TODO REMOVE
-        #sensor_uncertainty = np.eye(sensor_uncertainty.shape[0])
         
         filt.update(step_idx, sensor_reading, sensor_uncertainty)
         

@@ -31,7 +31,7 @@ class Basic_Strip_Sensor(Sensor):
         
         return peak_loc, peak_size
         
-    def sense_extra(self, strip_data):
+    def sense(self, strip_data):
         peak_loc, peak_size = self.sense_with_peak(strip_data)
         
         extra = {
@@ -69,7 +69,7 @@ class Downsample_Strip_Sensor(Sensor):
         
         return peak_loc, peak_size
         
-    def sense_extra(self, strip_data):
+    def sense(self, strip_data):
         peak_loc, peak_size = self.sense_with_peak(strip_data)
         
         extra = {
@@ -132,10 +132,6 @@ class Double_Half_Strip(Sensor):
         return mean_loc, covar_matr, peaks, peak_sizes
         
     def sense(self, strip_data):
-        mean_loc, covar_matr, peaks, peak_sizes = self.sense_with_metadata(strip_data)
-        return mean_loc, covar_matr
-        
-    def sense_extra(self, strip_data):
         mean_loc, covar_matr, peaks, peak_sizes = self.sense_with_metadata(strip_data)
         
         

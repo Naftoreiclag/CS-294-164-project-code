@@ -144,14 +144,6 @@ def main():
             
             results[sensor_name] = sensor_match_locs
             np.save('{}_{}_locs_reg.npy'.format(video_debug_name, sensor_name), sensor_match_locs)
-                
-    #dhs_fname = '{}_{}_locs_rbr.npy'.format(video_debug_name, "DHS")
-    #dhs_data = np.load(dhs_fname)
-    #results = {}
-    #results["DHS"] = dhs_data
-    
-    
-    #np.save('{}_{}_locs_rbr.npy'.format(video_debug_name, sensor_name), results[0.2])
             
     show(results)
     

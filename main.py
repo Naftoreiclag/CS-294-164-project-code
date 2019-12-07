@@ -55,8 +55,6 @@ def show_results(time_series):
         data = substitute_none_with_nan(data)
         data = np.array(data)[:num_steps]
         
-        #print(test_name, get_standard_dev(ground_truth, data))
-        
         axs.plot(xs, data, '.-', label=test_name)
     
     axs.legend()
@@ -100,7 +98,6 @@ def main():
                     
                     error = ground_truth - predictions[:,:2]
                     error = np.linalg.norm(error, axis=1)
-                    #show_results({'error' : error})
                     
                     key = (video_debug_name, sensor_name, filt_name, latency)
                     
@@ -161,12 +158,10 @@ def main():
             for row in output_data_table:
                 ofile.write('&'.join(row) + '\\\\\n')
                     
-            
+        
+        print('\n'.join(str(x) for x in output_data_table))    
         print(data_table_output_fname)
         
-        #show_results({'truth': ground_truth, **all_results})
-        #show_results(all_errors)
-            
 
 if __name__ == '__main__':
     main()

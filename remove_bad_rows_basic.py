@@ -13,7 +13,6 @@ def show(traces):
         axs.plot(xs, trace[:,1], '.-', label=str(trace_name))
     axs.set_ylim(-100, 200)
     axs.set_xlim(5500, 5600)
-    #axs.legend()
     plt.show()
 
 
@@ -51,11 +50,6 @@ def main():
             
     dhs_fname = '{}_{}_locs_rbr.npy'.format(video_debug_name, "DHS")
     dhs_data = np.load(dhs_fname)
-    #results = {}
-    #results["DHS"] = dhs_data
-    
-    
-    #np.save('{}_{}_locs_rbr.npy'.format(video_debug_name, sensor_name), results[0.2])
             
     show(results)
     
